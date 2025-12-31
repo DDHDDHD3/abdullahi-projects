@@ -112,8 +112,8 @@ abdullahi---portfolio/
    
    Create or edit `.env.local` with your credentials:
    ```env
-   VITE_DATABASE_URL=postgresql://username:password@host/database?sslmode=require
-   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   VITE_DATABASE_URL=
+   VITE_GEMINI_API_KEY=
    ```
 
 4. **Set up the database**
