@@ -926,11 +926,11 @@ Thank you for considering my application. I would welcome the opportunity to dis
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     <div className="space-y-2 md:space-y-3">
                       <label className="badge-label mb-2 ml-2">Your Name</label>
-                      <input name="name" required type="text" className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-6 py-4 md:py-5 focus:outline-none focus:ring-4 focus:ring-blue-600/20 transition-all text-base md:text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="John Doe" />
+                      <input name="name" required type="text" className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-6 py-4 md:py-5 focus:outline-none focus:ring-4 focus:ring-blue-600/20 transition-all text-base md:text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="Abdallah Muse" />
                     </div>
                     <div className="space-y-2 md:space-y-3">
                       <label className="badge-label mb-2 ml-2">Email Address</label>
-                      <input name="email" required type="email" className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-6 py-4 md:py-5 focus:outline-none focus:ring-4 focus:ring-blue-600/20 transition-all text-base md:text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="john@example.com" />
+                      <input name="email" required type="email" className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-6 py-4 md:py-5 focus:outline-none focus:ring-4 focus:ring-blue-600/20 transition-all text-base md:text-lg font-bold text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500" placeholder="abdallah@example.com" />
                     </div>
                   </div>
                   <div className="space-y-2 md:space-y-3">

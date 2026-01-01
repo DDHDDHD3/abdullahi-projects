@@ -99,8 +99,8 @@ abdullahi---portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/abdullahi---portfolio.git
-   cd abdullahi---portfolio
+   git clone https://github.com/DDHDDHD3/abdullahi-projects.git
+   cd abdullahi-projects
    ```
 
 2. **Install dependencies**
