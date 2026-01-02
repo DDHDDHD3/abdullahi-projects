@@ -180,11 +180,18 @@ const App: React.FC = () => {
     };
   }, [isAdmin]);
 
-  const handleDownloadCV = (e: React.MouseEvent) => {
+  const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
+
+  const handleDownloadCV = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
-    import('jspdf').then(({ jsPDF }) => {
+    if (isDownloadingPDF) return; // Prevent multiple simultaneous downloads
+
+    setIsDownloadingPDF(true);
+
+    try {
+      const { jsPDF } = await import('jspdf');
       const doc = new jsPDF();
       let y = 20;
 
@@ -379,11 +386,15 @@ Thank you for considering my application. I would welcome the opportunity to dis
       doc.text('Phone: +252 61 7654470', 20, y); y += 5;
       doc.text('Location: Mogadishu, Banaadir, Somalia', 20, y);
 
+      // Save the PDF
       doc.save('Abdullahi_Muse_Issa_CV.pdf');
-    }).catch(err => {
+
+      setIsDownloadingPDF(false);
+    } catch (err) {
       console.error('Failed to generate PDF:', err);
-      alert('Could not generate PDF. Please try again.');
-    });
+      setIsDownloadingPDF(false);
+      alert('Could not generate PDF. Please try again or contact support if the issue persists.');
+    }
   };
 
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -530,10 +541,20 @@ Thank you for considering my application. I would welcome the opportunity to dis
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleDownloadCV}
-                    className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black flex items-center justify-center space-x-3 transition-all shadow-2xl shadow-blue-600/40 group cursor-pointer"
+                    disabled={isDownloadingPDF}
+                    className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black flex items-center justify-center space-x-3 transition-all shadow-2xl shadow-blue-600/40 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
-                    <span className="text-base md:text-lg">Download CV</span>
+                    {isDownloadingPDF ? (
+                      <>
+                        <Loader2 size={20} className="animate-spin" />
+                        <span className="text-base md:text-lg">Generating PDF...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
+                        <span className="text-base md:text-lg">Download CV</span>
+                      </>
+                    )}
                   </motion.button>
 
                   <motion.a

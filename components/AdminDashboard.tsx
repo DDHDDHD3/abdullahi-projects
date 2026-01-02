@@ -376,7 +376,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isDark, onExit }
                                                 <p className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-300">{project.tech.join(' • ')}</p>
                                             </div>
                                         </div>
-                                        <div className="flex items-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <div className="flex items-center space-x-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                             <button
                                                 onClick={() => {
                                                     setFormData({ ...project, tech: project.tech.join(', ') });
@@ -488,7 +488,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isDark, onExit }
                                             <p className="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-300">{skill.category}</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="flex items-center space-x-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                         <button
                                             onClick={() => {
                                                 setFormData(skill);
@@ -601,7 +601,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isDark, onExit }
                                             <h4 className="text-xl font-black text-slate-900 dark:text-slate-100">{exp.role}</h4>
                                             <p className="text-sm text-blue-500 font-bold uppercase tracking-widest">{exp.company} • {exp.period}</p>
                                         </div>
-                                        <div className="flex items-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <div className="flex items-center space-x-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                             <button
                                                 onClick={() => {
                                                     setFormData({ ...exp, description: exp.description.join('\n') });
